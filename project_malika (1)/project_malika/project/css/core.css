@@ -1,0 +1,183 @@
+:root {
+    /* Moana 2 inspired colors */
+    --ocean-deep: #003B6F;
+    --ocean-surface: #0096FF;
+    --teal: #00BFB3;
+    --coral: #FF6B6B;
+    --sand: #FFE0B2;
+    --gold: #FFD700;
+    --spirit-blue: #64E9EE;
+    --volcanic-red: #FF4500;
+    --night-blue: #001F3F;
+    --white: #FFFFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Moana', 'Britannic Bold', sans-serif;
+    background: var(--ocean-deep);
+    color: var(--white);
+    overflow-x: hidden;
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* Magical water effect */
+.water-ripple {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(0, 150, 255, 0.1) 100%
+    );
+    pointer-events: none;
+    animation: ripple 8s ease-in-out infinite;
+}
+
+@keyframes ripple {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* Enhanced button styling */
+.btn {
+    width: 250px;
+    height: 50px;
+    font-size: 20px;
+    cursor: pointer;
+    background: transparent;
+    color: var(--spirit-blue);
+    border: 2px solid var(--spirit-blue);
+    border-radius: 25px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    z-index: 1;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(100, 233, 238, 0.2),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn:hover {
+    background: var(--spirit-blue);
+    color: var(--night-blue);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(100, 233, 238, 0.4);
+}
+
+/* Enhanced headings */
+h1, h2, h3, h4 {
+    color: var(--white);
+    text-shadow: 2px 2px 4px var(--night-blue),
+                 0 0 20px var(--spirit-blue);
+    letter-spacing: 2px;
+}
+
+h1 {
+    font-size: 70px;
+    text-transform: uppercase;
+    background: linear-gradient(var(--white), var(--spirit-blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h2 {
+    text-align: center;
+    font-size: 30px;
+    color: white;
+    margin: 0 auto;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+h3 {
+    text-align: center;
+    font-size: 30px;
+    color: white;
+    margin: 0 auto;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+h4 {
+    font-size: 24px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+strong {
+    color: #F79300;
+}
+
+label {
+    font-size: 24px;
+    color: var(--orange);
+}
+
+input {
+    width: 350px;
+    height: 50px;
+    font-size: 20px;
+    padding-left: 5px;
+    color: var(--orange);
+    background: ;
+    border: 2px solid var(--orange);
+}
+
+.checker {
+    color: white;
+    font-size: 30px;
+}
+
+.btn-slide {
+    display: block;
+    width: 100px;
+    height: 100px;
+    background: var(--orange);
+    color: black;
+    font-size: 20px;
+    text-transform: uppercase;
+    border-radius: 50%;
+    font-weight: 800;
+    z-index: 1;
+}
+
+.btn-slide:hover {
+    background: #b68733 !important;
+    cursor: pointer;
+    color: white;
+}
